@@ -1,73 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>N&J Command Center V5.5</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>N&J Command Center — V5.4.1 Sanitized Demo</title>
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <aside>
-    <div class="brand"><span>N&J</span><div><b>Command Center</b><small>V5.5 local test</small></div></div>
-    <button class="nav active" data-page="dashboard">📊 Dashboard</button>
-    <button class="nav" data-page="contacts">👥 Contactos</button>
-    <button class="nav" data-page="properties">🏠 Propiedades</button>
-    <button class="nav" data-page="projects">🔨 Proyectos</button>
-    <button class="nav" data-page="finance">💵 Finanzas</button>
-    <button class="nav" data-page="settings">⚙️ Datos y seguridad</button>
-    <p class="side-note">Modo prueba. Los datos se guardan solo en este navegador con localStorage.</p>
-  </aside>
-
-  <main>
-    <header>
-      <div><p class="kicker" id="kicker">Dashboard inteligente</p><h1 id="title">N&J Command Center</h1><p id="lead">La página principal se alimenta de contactos, propiedades, proyectos y transacciones.</p></div>
-      <button id="exportBtn" class="btn">⬇️ Exportar JSON</button>
-    </header>
-    <div class="notice">⚠️ Esta versión usa datos de prueba. No metas datos reales hasta conectar backend seguro, login y base de datos.</div>
-
-    <section id="dashboard" class="page active">
-      <div class="stats" id="stats"></div>
-      <div class="grid2">
-        <article class="card"><h2>Propiedades alimentando el dashboard</h2><table id="dashProps"></table></article>
-        <article class="card"><h2>Proyectos por etapa</h2><div id="stageSummary" class="list"></div></article>
-      </div>
-      <article class="card"><h2>Finanzas por centro de costo</h2><table id="costCenters"></table></article>
-    </section>
-
-    <section id="contacts" class="page">
-      <div class="grid2">
-        <form class="card" id="contactForm"><h2>Formulario inteligente de contactos</h2><input type="hidden" name="id"><label>Tipo<select name="type"><option value="tenant">Inquilino</option><option value="client">Cliente</option><option value="vendor">Contratista/Vendor</option><option value="investor">Inversionista</option><option value="team">Equipo</option></select></label><label>Nombre<input name="name" required></label><label>Teléfono<input name="phone"></label><label>Email<input name="email" type="email"></label><label>Estado<select name="status"><option value="active">Activo</option><option value="prospect">Prospecto</option><option value="inactive">Inactivo</option></select></label><label class="smart contact-tenant">Propiedad rentada<select name="linkedPropertyId" data-fill="properties"><option value="">Sin vincular</option></select></label><label class="smart contact-vendor">Especialidad<input name="trade" placeholder="Plomería, drywall, eléctrico..."></label><label class="smart contact-investor">Capital estimado<input name="capital" type="number"></label><label>Notas<textarea name="notes"></textarea></label><div class="actions"><button type="reset" class="btn">Limpiar</button><button class="btn primary">Guardar</button></div></form>
-        <article class="card"><h2>Contactos</h2><table id="contactsTable"></table></article>
-      </div>
-    </section>
-
-    <section id="properties" class="page">
-      <div class="grid2">
-        <form class="card" id="propertyForm"><h2>Formulario inteligente de propiedades</h2><input type="hidden" name="id"><label>Tipo<select name="type"><option value="rental">Rental propia</option><option value="flip">Flip / inversión</option><option value="client">Propiedad de cliente</option><option value="lead">Lead / posible compra</option><option value="maintenance">Mantenimiento</option></select></label><label>Dirección / etiqueta<input name="address" required placeholder="Elmhurst, Jessamine, 123 Main St"></label><label>Ciudad<input name="city" value="Louisville"></label><label>Estado<input name="state" value="KY"></label><label>Contacto opcional<select name="contactId" data-fill="contacts"><option value="">Sin contacto</option></select></label><label>Estado<select name="status"><option value="active">Activa</option><option value="available">Disponible</option><option value="under-work">En trabajo</option><option value="lead">Lead</option><option value="sold">Vendida</option></select></label><label class="smart property-rental">Renta mensual<input name="monthlyRent" type="number"></label><label class="smart property-rental">Día límite<input name="rentDueDay" type="number" value="5"></label><label class="smart property-flip property-lead">Precio compra<input name="purchasePrice" type="number"></label><label class="smart property-flip property-lead">ARV<input name="arv" type="number"></label><label class="smart property-flip property-lead">Rehab budget<input name="rehabBudget" type="number"></label><label>Notas<textarea name="notes"></textarea></label><div class="actions"><button type="reset" class="btn">Limpiar</button><button class="btn primary">Guardar</button></div></form>
-        <article class="card"><h2>Propiedades</h2><table id="propertiesTable"></table></article>
-      </div>
-    </section>
-
-    <section id="projects" class="page">
-      <div class="grid2">
-        <form class="card" id="projectForm"><h2>Proyectos por clasificación y etapa</h2><input type="hidden" name="id"><label>Nombre<input name="name" required></label><label>Clasificación<select name="type"><option value="remodeling">Remodeling</option><option value="repair">Repair</option><option value="flip">Flip</option><option value="maintenance">Maintenance</option><option value="admin">Admin</option></select></label><label>Etapa<select name="stage"><option value="planned">Planeado</option><option value="active">Activo</option><option value="waiting">En espera</option><option value="inspection">Inspección</option><option value="completed">Terminado</option></select></label><label>Propiedad opcional<select name="propertyId" data-fill="properties"><option value="">Sin propiedad</option></select></label><label>Contacto opcional<select name="contactId" data-fill="contacts"><option value="">Sin contacto</option></select></label><label>Presupuesto<input name="budget" type="number"></label><label>Gastado<input name="spent" type="number"></label><label>Notas<textarea name="notes"></textarea></label><div class="actions"><button type="reset" class="btn">Limpiar</button><button class="btn primary">Guardar</button></div></form>
-        <article class="card"><h2>Board de etapas</h2><div id="board" class="board"></div></article>
-      </div>
-      <article class="card"><h2>Lista completa</h2><table id="projectsTable"></table></article>
-    </section>
-
-    <section id="finance" class="page">
-      <div class="grid2">
-        <form class="card" id="txForm"><h2>Ingreso o gasto</h2><input type="hidden" name="id"><label>Tipo<select name="kind"><option value="income">Ingreso</option><option value="expense">Gasto</option></select></label><label>Fecha<input name="date" type="date" required></label><label>Monto<input name="amount" type="number" step="0.01" required></label><label>Categoría<select name="category"><option>Rent</option><option>Materials</option><option>Payroll</option><option>Gas</option><option>Utilities</option><option>Repairs</option><option>Other</option></select></label><label>Propiedad opcional<select name="propertyId" data-fill="properties"><option value="">Sin propiedad</option></select></label><label>Proyecto opcional<select name="projectId" data-fill="projects"><option value="">Sin proyecto</option></select></label><label>Descripción<input name="description"></label><div class="actions"><button type="reset" class="btn">Limpiar</button><button class="btn primary">Guardar</button></div></form>
-        <article class="card"><h2>Resumen financiero</h2><div id="financeStats" class="stats mini"></div></article>
-      </div>
-      <article class="card"><h2>Transacciones</h2><table id="txTable"></table></article>
-    </section>
-
-    <section id="settings" class="page">
-      <div class="grid2"><article class="card"><h2>Datos locales</h2><button id="resetBtn" class="btn danger">Resetear datos de prueba</button><textarea id="importBox" placeholder="Pega backup JSON"></textarea><button id="importBtn" class="btn">Importar JSON</button></article><article class="card"><h2>Seguridad para borrar</h2><p class="notice">Ya hay cartel de confirmación. La contraseña/PIN queda preparada para próxima fase; en HTML puro no es seguro guardar PIN real.</p><label>PIN futuro<input disabled placeholder="Pendiente backend seguro"></label></article></div>
-    </section>
-  </main>
-  <script src="app.js"></script>
+<div id="app"></div>
+<div id="mobileCover" class="mobile-cover" onclick="closeMobileMenu()"></div>
+<div id="modal" class="modal"><div id="modalPanel" class="modal-panel"></div></div>
+<div id="drawer" class="drawer"><div id="drawerPanel" class="drawer-panel"></div></div>
+<script src="app.js"></script>
 </body>
 </html>
