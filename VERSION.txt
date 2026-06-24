@@ -1,3 +1,3 @@
-N&J Command Center — GitHub Pages
-Current repository page is the existing V5.5 local test.
-Prepared local package: V5.4 Smart Dashboard.
+N&J Command Center V5.4.1 Sanitized Demo
+Upload test from ChatGPT connector: OK
+Next step: replace app.js with sanitized public version.
