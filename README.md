@@ -1,28 +1,40 @@
 # N&J Command Center
 
-Centro de control local para **N&J Remodeling and Rental LLC**.
+Demo pública sanitizada para **N&J Command Center**.
 
-## Versión subida
+## Versión publicada
 
-**V5.5 local test**
+**V5.4.1 Clean Public Demo**
 
-Esta versión es un prototipo HTML de una sola página para probar flujo y estructura antes de usar datos reales.
+Esta versión está preparada para GitHub Pages y contiene solamente datos ficticios.
 
-## Incluye
+## Estado actual
 
-- Dashboard principal alimentado por los datos de contactos, propiedades, proyectos y transacciones.
-- Formularios inteligentes:
-  - Contactos por tipo: inquilino, cliente, contratista, inversionista, equipo.
-  - Propiedades por tipo: rental, flip, propiedad de cliente, lead, mantenimiento.
-  - Proyectos por clasificación y etapa.
-- Relaciones opcionales entre contactos, propiedades, proyectos y transacciones.
-- Clasificación de proyectos por etapas: planeado, activo, en espera, inspección y terminado.
-- Finanzas básicas por centro de costo.
-- Borrado con cartel de confirmación.
-- Área preparada para agregar contraseña/PIN de seguridad para borrar en una fase futura.
-- Exportar/importar backup JSON.
-- Datos de prueba guardados en `localStorage`.
+- `index.html` contiene la demo pública sanitizada.
+- `style.css` contiene el diseño visual.
+- La página publicada no depende de `app.js`.
+- Los datos visibles son ejemplos inventados.
 
-## Nota importante
+## Datos demo usados
 
-No metas datos reales todavía. Esta versión guarda información solo en el navegador. Para producción se debe conectar un backend seguro con login, roles y base de datos.
+- Oakstone Rental A
+- Pinecrest Rental B
+- Sample Ridge Flip
+- Demo Contact A
+- Demo Supply Co.
+- Sample Contractor Group
+
+Estos nombres no representan propiedades, personas, compañías ni direcciones reales.
+
+## Importante
+
+No metas información real en esta demo pública:
+
+- tenants reales
+- direcciones reales
+- recibos reales
+- leases reales
+- documentos bancarios
+- datos personales
+
+Para producción se necesita backend seguro, login, roles, permisos y base de datos.
