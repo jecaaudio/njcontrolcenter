@@ -7,10 +7,50 @@
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div id="app"></div>
-<div id="mobileCover" class="mobile-cover" onclick="closeMobileMenu()"></div>
-<div id="modal" class="modal"><div id="modalPanel" class="modal-panel"></div></div>
-<div id="drawer" class="drawer"><div id="drawerPanel" class="drawer-panel"></div></div>
-<script src="app.js"></script>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="kicker">SANITIZED DEMO</div>
+      <div class="name">N&J Command Center</div>
+      <div class="sub">V5.4.1 Clean Public Demo</div>
+    </div>
+    <nav class="nav">
+      <a href="#dashboard"><button class="active"><span class="ico">📊</span>Dashboard</button></a>
+      <a href="#properties"><button><span class="ico">🏠</span>Properties</button></a>
+      <a href="#projects"><button><span class="ico">🔨</span>Projects</button></a>
+      <a href="#contacts"><button><span class="ico">👥</span>Contacts</button></a>
+      <a href="#transactions"><button><span class="ico">💵</span>Transactions</button></a>
+      <a href="#rent"><button><span class="ico">⏰</span>Rent & Late Fees</button></a>
+      <a href="#receipts"><button><span class="ico">🧾</span>Receipts</button></a>
+      <a href="#settings"><button><span class="ico">⚙️</span>Settings</button></a>
+    </nav>
+    <div class="side-foot">All records are fictional sample data.</div>
+  </aside>
+  <main class="main">
+    <div class="topbar"><strong>N&J Command Center</strong></div>
+    <div class="content">
+      <section id="dashboard">
+        <div class="page-head"><div><div class="eyebrow">N&J Command Center</div><h1>Dashboard</h1><p class="subtitle">Public sanitized demo. Do not enter real people, addresses, receipts, leases, or banking data here.</p></div></div>
+        <div class="grid cols-4">
+          <div class="card stat"><div class="label">Income</div><div class="value positive">$2,300</div><div class="hint">Demo rent income</div></div>
+          <div class="card stat"><div class="label">Expenses</div><div class="value negative">$2,675</div><div class="hint">Demo project spending</div></div>
+          <div class="card stat"><div class="label">Net</div><div class="value negative">-$375</div><div class="hint">Demo P&L</div></div>
+          <div class="card stat"><div class="label">Open Items</div><div class="value warning">2</div><div class="hint">Demo action center</div></div>
+        </div>
+        <div class="grid cols-2" style="margin-top:16px">
+          <div class="card"><h3>P&L by property</h3><div class="table-wrap"><table><thead><tr><th>Property</th><th>Income</th><th>Expenses</th><th>Net</th></tr></thead><tbody><tr><td>Oakstone Rental A</td><td>$2,300</td><td>$2,675</td><td class="negative">-$375</td></tr><tr><td>Pinecrest Rental B</td><td>$0</td><td>$0</td><td>$0</td></tr><tr><td>Sample Ridge Flip</td><td>$0</td><td>$0</td><td>$0</td></tr></tbody></table></div></div>
+          <div class="card"><h3>Project stages</h3><div class="stage-mini"><div class="stage-mini-card"><div class="big">1</div><div class="name">Planning</div></div><div class="stage-mini-card"><div class="big">1</div><div class="name">In Progress</div></div><div class="stage-mini-card"><div class="big">0</div><div class="name">Completed</div></div><div class="stage-mini-card"><div class="big">0</div><div class="name">Cancelled</div></div></div></div>
+        </div>
+      </section>
+      <section id="properties" class="card" style="margin-top:16px"><h3>Properties</h3><div class="table-wrap"><table><thead><tr><th>Name</th><th>Type</th><th>Status</th><th>Rent</th><th>Notes</th></tr></thead><tbody><tr><td>Oakstone Rental A</td><td>Rental Property</td><td><span class="badge green">Occupied</span></td><td>$2,300</td><td>Fictional tenant-linked rental.</td></tr><tr><td>Pinecrest Rental B</td><td>Rental Property</td><td><span class="badge gray">Vacant</span></td><td>$1,950</td><td>Fictional available rental.</td></tr><tr><td>Sample Ridge Flip</td><td>Flip Property</td><td><span class="badge yellow">Rehab</span></td><td>—</td><td>Fictional flip/project property.</td></tr></tbody></table></div></section>
+      <section id="projects" class="card" style="margin-top:16px"><h3>Projects</h3><div class="table-wrap"><table><thead><tr><th>Name</th><th>Type</th><th>Stage</th><th>Property</th><th>Budget</th></tr></thead><tbody><tr><td>Oakstone Kitchen Refresh</td><td>Interior Remodel</td><td><span class="badge yellow">In Progress</span></td><td>Oakstone Rental A</td><td>$12,000</td></tr><tr><td>Sample Ridge Rehab</td><td>Flip / Full Renovation</td><td><span class="badge blue">Planning</span></td><td>Sample Ridge Flip</td><td>$42,000</td></tr></tbody></table></div></section>
+      <section id="contacts" class="card" style="margin-top:16px"><h3>Contacts</h3><div class="table-wrap"><table><thead><tr><th>Name</th><th>Role</th><th>Phone</th><th>Email</th></tr></thead><tbody><tr><td>Demo Contact A</td><td>Tenant</td><td>555-0101</td><td>tenant@example.test</td></tr><tr><td>Demo Supply Co.</td><td>Vendor</td><td>555-0102</td><td>supply@example.test</td></tr><tr><td>Sample Contractor Group</td><td>Contractor / Vendor</td><td>555-0103</td><td>contractor@example.test</td></tr></tbody></table></div></section>
+      <section id="transactions" class="card" style="margin-top:16px"><h3>Transactions</h3><div class="table-wrap"><table><thead><tr><th>Description</th><th>Type</th><th>Category</th><th>Linked record</th><th>Amount</th></tr></thead><tbody><tr><td>Demo rent payment</td><td><span class="badge green">Income</span></td><td>Rental Income</td><td>Oakstone Rental A</td><td class="positive">+$2,300</td></tr><tr><td>Demo materials purchase</td><td><span class="badge red">Expense</span></td><td>Materials</td><td>Oakstone Kitchen Refresh</td><td class="negative">-$875</td></tr><tr><td>Demo labor payment</td><td><span class="badge red">Expense</span></td><td>Labor / Payroll</td><td>Oakstone Kitchen Refresh</td><td class="negative">-$1,800</td></tr></tbody></table></div></section>
+      <section id="rent" class="card" style="margin-top:16px"><h3>Rent & Late Fees</h3><div class="table-wrap"><table><thead><tr><th>Month</th><th>Property</th><th>Rent</th><th>Paid</th><th>Late fee</th><th>Policy</th></tr></thead><tbody><tr><td>2026-06</td><td>Oakstone Rental A</td><td>$2,300</td><td>2026-06-08</td><td>$80</td><td>$60 first late fee + $10/day after grace period</td></tr><tr><td>2026-06</td><td>Pinecrest Rental B</td><td>$1,950</td><td>—</td><td>Pending</td><td>Demo unpaid record</td></tr></tbody></table></div></section>
+      <section id="receipts" class="card" style="margin-top:16px"><h3>Receipts</h3><div class="table-wrap"><table><thead><tr><th>Vendor</th><th>Amount</th><th>Status</th><th>Linked transaction</th></tr></thead><tbody><tr><td>Demo Supply Co.</td><td>$875</td><td><span class="badge green">Converted</span></td><td>Demo materials purchase</td></tr><tr><td>Sample Fuel Vendor</td><td>$74.50</td><td><span class="badge yellow">Needs Review</span></td><td>—</td></tr></tbody></table></div></section>
+      <section id="settings" class="card" style="margin-top:16px"><h3>Settings / Safety</h3><p class="security-note">This public demo is static and sanitized. Real editing, passwords, user roles, tenant records, receipts, leases, and bank data should be added only later with a secure backend and database.</p></section>
+    </div>
+  </main>
+</div>
 </body>
 </html>
