@@ -1,3 +1,0 @@
-N&J Command Center V5.4.1 Clean Public Demo
-Status: Published as sanitized static GitHub Pages demo.
-Note: The active page does not load app.js.
